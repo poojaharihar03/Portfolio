@@ -12,7 +12,7 @@ const Contact = () => {
           <div className="flex justify-center space-x-6">
             {/* GitHub */}
             <a
-              href="https://github.com/yourusername"
+              href="https://github.com/poojaharihar03"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-300 hover:text-white"
@@ -21,7 +21,7 @@ const Contact = () => {
             </a>
             {/* LinkedIn */}
             <a
-              href="https://linkedin.com/in/yourusername"
+              href="https://www.linkedin.com/in/poojaharihar"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-300 hover:text-white"
@@ -30,7 +30,7 @@ const Contact = () => {
             </a>
             {/* X (formerly Twitter) */}
             <a
-              href="https://x.com/yourusername"
+              href="https://x.com/Pooja_0305"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-300 hover:text-white"
