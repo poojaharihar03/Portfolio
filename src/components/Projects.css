@@ -1,16 +1,3 @@
-.grid-light {
-  background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.1) 1px, transparent 1px),
-                    linear-gradient(rgba(0, 0, 0, 0.1) 1px, transparent 1px);
-  background-size: 20px 20px;
-}
-
-/* Grid background for dark mode */
-.grid-dark {
-  background-image: linear-gradient(90deg, rgba(237, 97, 181, 0.1) 1px, transparent 1px),
-                    linear-gradient(rgba(237, 97, 181, 0.1) 1px, transparent 1px);
-  background-size: 20px 20px;
-}
-
 section h2 {
   text-align: center;
   font-size: 4rem;
@@ -133,4 +120,8 @@ section .projects .project footer .tech-list {
 .project-item.light-mode:hover {
   background-color: black;
   color: white;
+}
+.custom-hover:hover{
+  background-color: rgb(178, 178, 178) !important;
+  color: white !important;
 }

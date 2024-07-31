@@ -36,7 +36,7 @@ const Projects = ({ isDarkMode }) => {
       techStack: ['OpenAPI', 'Python', 'Flask', 'Langchain', 'Yagmail'],
     },
     {
-      title: 'Food-delivery-time-Prediciton',
+      title: 'Food Delivery Time Prediciton',
       link: 'https://github.com/poojaharihar03/Food-delivery-time-Prediciton',
       description: 'Food-delivery-Time-Prediciton Predicting the delivery time of your order is a challenging task for every food delivery service like Zomato and Swiggy. Food Delivery services like Zomato and Swiggy need to show the accurate time to the user on the approx time it will take to deliver your order to keep transparency.',
       techStack: ['Machine Learning', 'Python', 'Jupyter Notebook'],
@@ -67,7 +67,7 @@ const Projects = ({ isDarkMode }) => {
           {projects.map((project, index) => (
             <div
               key={index}
-              className={`relative rounded-lg shadow-lg p-6 transition-transform duration-500 transform ${inView.includes(index) ? 'translate-y-0 opacity-100' : 'translate-y-16 opacity-50'} project-item ${isDarkMode ? 'bg-gray-800 text-white hover:bg-pink-500' : 'bg-white text-black light-mode hover:bg-black hover:text-white'}`}
+              className={`relative rounded-lg shadow-lg p-6 transition-transform duration-500 transform ${inView.includes(index) ? 'translate-y-0 opacity-100' : 'translate-y-16 opacity-50'} project-item ${isDarkMode ? 'bg-gray-800 text-white hover:bg-pink-500' : 'bg-white text-black light-mode hover:bg-gray-500 hover:text-white custom-hover'}`}
               style={{
                 display: 'flex',
                 flexDirection: 'column',
@@ -79,7 +79,7 @@ const Projects = ({ isDarkMode }) => {
                   {project.title}
                 </a>
               </h3>
-              <p className={`mb-4 ${isDarkMode ? 'text-gray-300' : 'text-gray-700'} text-justify`}>{project.description}</p>
+              <p className={`mb-4 ${isDarkMode ? 'text-white' : 'text-gray-700'} text-justify`}>{project.description}</p>
               <div className="flex flex-wrap">
                 {project.techStack.map((tech, i) => (
                   <span key={i} className="mr-2 mb-2 text-xs px-2 py-1 bg-white-200 rounded-full">{tech}</span>
