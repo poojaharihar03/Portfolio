@@ -20,7 +20,7 @@ const Hackathon = ({ isDarkMode }) => {
         <h2 className={`text-3xl font-bold text-center mb-8 ${isDarkMode ? 'text-white' : 'text-black'}`}>Hackathon</h2>
         <div className="grid grid-cols-1 gap-8">
           {hackathons.map((hackathon, index) => (
-            <div key={index} className={`bg-white rounded-lg shadow-lg p-6 flex items-center ${isDarkMode ? 'bg-gray-800 text-white' : 'bg-white text-black'}`}>
+            <div key={index} className={`bg-white rounded-lg shadow-lg p-6 flex items-center ${isDarkMode ? 'bg-white text-black' : 'bg-white text-black'}`}>
               {/* Left Image */}
               <div className="flex-shrink-0 w-1/4 mr-4">
                 <img

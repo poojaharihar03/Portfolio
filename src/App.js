@@ -17,7 +17,7 @@ const App = () => {
       <Banner isDarkMode={isDarkMode}/>
       <Projects isDarkMode={isDarkMode}/>
       <Hackathon isDarkMode={isDarkMode} />
-      <Contact />
+      <Contact isDarkMode={isDarkMode}/>
     </div>
   );
 };

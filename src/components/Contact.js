@@ -1,46 +1,45 @@
 import React from 'react';
-import { ReactComponent as GitHubIcon } from '../assets/icons/github.svg'; // Adjust path if necessary
-import { ReactComponent as LinkedInIcon } from '../assets/icons/linkedin.svg'; // Adjust path if necessary
-import { ReactComponent as XIcon } from '../assets/icons/X.svg'; // Adjust path if necessary
+import { ReactComponent as GitHubIcon } from '../assets/icons/github.svg'; 
+import { ReactComponent as LinkedInIcon } from '../assets/icons/linkedin.svg'; 
+import { ReactComponent as XIcon } from '../assets/icons/X.svg'; 
 
-const Contact = () => {
+const Contact = ({ isDarkMode }) => {
   return (
-    <footer className="bg-gray-400 py-4">
-      <div className="container mx-auto px-4">
-        <div className="text-center text-white mb-4">
-          <h2 className="text-2xl font-bold mb-4">Connect with Me</h2>
-          <div className="flex justify-center space-x-6">
-            {/* GitHub */}
-            <a
-              href="https://github.com/poojaharihar03"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-300 hover:text-white"
-            >
-              <GitHubIcon className="w-8 h-8" />
-            </a>
-            {/* LinkedIn */}
-            <a
-              href="https://www.linkedin.com/in/poojaharihar"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-300 hover:text-white"
-            >
-              <LinkedInIcon className="w-8 h-8" />
-            </a>
-            {/* X (formerly Twitter) */}
-            <a
-              href="https://x.com/Pooja_0305"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-300 hover:text-white"
-            >
-              <XIcon className="w-8 h-8" />
-            </a>
-          </div>
+    <footer className={`py-2 ${isDarkMode ? 'bg-gray-600' : 'bg-gray-300'}`}>
+      <div className="container mx-auto px-4 flex items-center justify-between">
+        {/* Copyright  */}
+        <div className={`text-xs ${isDarkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+          <p>&copy; {new Date().getFullYear()} Pooja Harihar</p>
         </div>
-        <div className="text-center white-400">
-          <p>&copy; {new Date().getFullYear()} Pooja Harihar. All rights reserved.</p>
+        {/* Connect with Me Icons */}
+        <div className="flex space-x-4">
+          {/* GitHub */}
+          <a
+            href="https://github.com/poojaharihar03"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`text-gray-300 hover:text-white ${isDarkMode ? 'hover:text-gray-100' : 'hover:text-gray-800'}`}
+          >
+            <GitHubIcon className="w-5 h-5" />
+          </a>
+          {/* LinkedIn */}
+          <a
+            href="https://www.linkedin.com/in/poojaharihar"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`text-gray-300 hover:text-white ${isDarkMode ? 'hover:text-gray-100' : 'hover:text-gray-800'}`}
+          >
+            <LinkedInIcon className="w-5 h-5" />
+          </a>
+          {/* X (formerly Twitter) */}
+          <a
+            href="https://x.com/Pooja_0305"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`text-gray-300 hover:text-white ${isDarkMode ? 'hover:text-gray-100' : 'hover:text-gray-800'}`}
+          >
+            <XIcon className="w-5 h-5" />
+          </a>
         </div>
       </div>
     </footer>
