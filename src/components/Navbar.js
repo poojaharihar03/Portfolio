@@ -1,14 +1,13 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-scroll';
+import React, { useState, useEffect } from 'react';  // Ensure these imports
+import { Link } from 'react-scroll';  // Ensure this import
 
-const Navbar = ({ isDarkMode, setIsDarkMode }) => {
+const Navbar = ({ isDarkMode, toggleDarkMode }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    // Handle scroll event to change navbar style
     const handleScroll = () => {
-      if (window.scrollY > 50) { // Adjust the scroll position threshold as needed
+      if (window.scrollY > 50) {
         setScrolled(true);
       } else {
         setScrolled(false);
@@ -26,7 +25,6 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
 
   const toggleMenu = () => setIsOpen(!isOpen);
   const closeMenu = () => setIsOpen(false);
-  const toggleTheme = () => setIsDarkMode(!isDarkMode);
 
   return (
     <nav className={`fixed top-0 left-0 w-full z-50 transition-transform duration-300 ${scrolled ? 'bg-opacity-70' : 'bg-opacity-100'} ${isDarkMode ? 'navbar dark-mode' : 'navbar'}`}>
@@ -47,7 +45,7 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
           </button>
 
           <button
-            onClick={toggleTheme}
+            onClick={toggleDarkMode}
             className="bg-gray-200 dark:bg-gray-700 p-2 rounded-full"
           >
             {isDarkMode ? '🌙' : '🌞'}
