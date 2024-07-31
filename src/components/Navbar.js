@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';  // Ensure these imports
-import { Link } from 'react-scroll';  // Ensure this import
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-scroll';
+import './Navbar.css';
 
 const Navbar = ({ isDarkMode, toggleDarkMode }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -46,9 +47,9 @@ const Navbar = ({ isDarkMode, toggleDarkMode }) => {
 
           <button
             onClick={toggleDarkMode}
-            className="bg-gray-200 dark:bg-gray-700 p-2 rounded-full"
+            className={`p-2 rounded-full ${isDarkMode ? 'toggle-button-dark' : 'toggle-button-light'}`}
           >
-            {isDarkMode ? '🌙' : '🌞'}
+            {isDarkMode ? '🌚' : '🌞'}
           </button>
         </div>
 
@@ -57,7 +58,7 @@ const Navbar = ({ isDarkMode, toggleDarkMode }) => {
             to="about"
             smooth={true}
             duration={500}
-            className="navbar-button hover:bg-blue-500 hover:text-white px-4 py-2 rounded transition-colors duration-300"
+            className={`navbar-button ${isDarkMode ? 'navbar-button-dark' : 'navbar-button-light'}`}
             onClick={closeMenu}
           >
             About
@@ -66,7 +67,7 @@ const Navbar = ({ isDarkMode, toggleDarkMode }) => {
             to="projects"
             smooth={true}
             duration={500}
-            className="navbar-button hover:bg-blue-500 hover:text-white px-4 py-2 rounded transition-colors duration-300"
+            className={`navbar-button ${isDarkMode ? 'navbar-button-dark' : 'navbar-button-light'}`}
             onClick={closeMenu}
           >
             Projects
@@ -75,7 +76,7 @@ const Navbar = ({ isDarkMode, toggleDarkMode }) => {
             href="https://drive.google.com/file/d/1CzMdtfwqJ9tr2UbJbnl6dhm-s3MfCBii/view?usp=drive_link"
             target="_blank"
             rel="noopener noreferrer"
-            className="navbar-button hover:bg-blue-500 hover:text-white px-4 py-2 rounded transition-colors duration-300"
+            className={`navbar-button ${isDarkMode ? 'navbar-button-dark' : 'navbar-button-light'}`}
             onClick={closeMenu}
           >
             Resume
@@ -84,7 +85,7 @@ const Navbar = ({ isDarkMode, toggleDarkMode }) => {
             to="contact"
             smooth={true}
             duration={500}
-            className="navbar-button hover:bg-blue-500 hover:text-white px-4 py-2 rounded transition-colors duration-300"
+            className={`navbar-button ${isDarkMode ? 'navbar-button-dark' : 'navbar-button-light'}`}
             onClick={closeMenu}
           >
             Contact

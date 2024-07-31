@@ -1,6 +1,6 @@
-@tailwind base;
+/* @tailwind base;
 @tailwind components;
-@tailwind utilities;
+@tailwind utilities; */
 
 /* Global styles */
 body {
@@ -12,37 +12,50 @@ body.dark-mode {
   background-color: #111827; 
   color: #fdfdfd; /* Dark mode text color */
 }
+
 .navbar-button {
   color: #000000; /* Default text color */
   background-color: transparent; /* Default background color */
-  /* border: 2px solid transparent;  */
+  /* border: 2px solid transparent;  Remove the border */
   font-weight: 370; /* Font weight */
-  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+  transition: background-color 0.3s, color 0.3s;
+  text-decoration: none; /* Remove underline */
 }
 
 .navbar-button:hover {
-  color: #ffffff; /* Text color on hover */
-  background-color: #007bff; /* Background color on hover */
-  border-color: #007bff; /* Border color on hover */
+  color: #666666; /* Lighter text color on hover in light mode */
+  background-color: transparent; /* Background color on hover */
+  border-color: transparent; /* No border on hover */
 }
 
 .navbar-button:active {
   background-color: #0056b3; /* Background color on active (click) */
 }
 
+/* Dark mode styles for navbar-button */
+body.dark-mode .navbar-button {
+  color: #ffffff; /* Dark mode text color */
+}
+
+body.dark-mode .navbar-button:hover {
+  color: #cccccc; /* Lighter text color on hover in dark mode */
+  background-color: transparent; /* Background color on hover */
+  border-color: transparent; /* No border on hover */
+}
+
 .navbar {
   background-color: #ffffff; /* Light mode navbar background */
-  color: #000000; /* Light mode navbar text color */
+  color: #0c0c0c; /* Light mode navbar text color */
   transition: background-color 0.3s, color 0.3s;
 }
 
 .navbar.dark-mode {
-  background-color: #fa3192d5; /* Dark mode navbar background */
+  background-color: #111827; /* Dark mode navbar background */
   color: #e0e0e0; /* Dark mode navbar text color */
 }
 
-
+/* Dark mode styles for banner */
 .banner.dark-mode {
-  /* background-color: #1e1e1e;  */
-  color: #0a0909; /* Dark mode banner text color */
+  background-color: #1e1e1e; /* Optional: Set background color if needed */
+  color: #ffffff; /* Dark mode banner text color */
 }

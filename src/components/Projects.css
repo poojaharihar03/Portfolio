@@ -1,5 +1,14 @@
-section {
-  margin-top: 15rem;
+.grid-light {
+  background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.1) 1px, transparent 1px),
+                    linear-gradient(rgba(0, 0, 0, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Grid background for dark mode */
+.grid-dark {
+  background-image: linear-gradient(90deg, rgba(237, 97, 181, 0.1) 1px, transparent 1px),
+                    linear-gradient(rgba(237, 97, 181, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
 }
 
 section h2 {
@@ -66,9 +75,7 @@ section .projects .project p a {
   transition: color 0.25s;
 }
 
-section .projects .project p a:hover {
-  color: var(--green);
-}
+
 
 section .projects .project footer {
   margin-top: auto;
@@ -92,4 +99,38 @@ section .projects .project footer .tech-list {
   section .projects {
     grid-template-columns: 2fr;
   }
+}
+.project-item .project-title a {
+  text-decoration: none;
+}
+
+/* Optional: Add a hover effect */
+.project-item .project-title a:hover {
+  text-decoration: underline; /* Or any other style you prefer */
+}
+/* General styles for project items */
+.project-item {
+  transition: transform 0.5s, background-color 0.5s;
+}
+
+/* Dark mode styles */
+.project-item.bg-dark {
+  background-color: #2b2b2b; /* Default dark background */
+  color: #fff; /* Default text color for dark mode */
+}
+
+.project-item.bg-dark:hover {
+  background-color: #f56b2a; /* Example hover color for dark mode */
+  color: #fff; /* Text color on hover */
+}
+
+/* Light mode styles */
+.project-item.bg-light {
+  background-color: #fff; /* Default light background */
+  color: #000; /* Default text color for light mode */
+}
+
+.project-item.light-mode:hover {
+  background-color: black;
+  color: white;
 }
