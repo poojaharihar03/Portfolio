@@ -16,7 +16,7 @@ const App = () => {
       <Navbar isDarkMode={isDarkMode} toggleDarkMode={() => setIsDarkMode(prevMode => !prevMode)} /> {/* Change here */}
       <Banner isDarkMode={isDarkMode}/>
       <Projects isDarkMode={isDarkMode}/>
-      <Hackathon />
+      <Hackathon isDarkMode={isDarkMode} />
       <Contact />
     </div>
   );
