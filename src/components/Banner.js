@@ -1,13 +1,13 @@
 import React from 'react';
 import profileImage from '../assets/profile.gif';
 
-const Banner = () => {
+const Banner = ({ isDarkMode }) => {
   const scrollToProjects = () => {
     document.getElementById('projects').scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
-    <section className="flex items-center justify-center min-h-screen bg-white">
+    <section className={`flex items-center justify-center min-h-screen ${isDarkMode ? 'bg-gray-900 text-white' : 'bg-white text-black'} transition-all duration-300`}>
       <div className="container mx-auto flex flex-col md:flex-row items-center">
         <div className="text-center md:text-left md:w-1/2 p-8">
           <h1 className="text-4xl font-bold mb-4">Pooja Harihar</h1>

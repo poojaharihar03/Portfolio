@@ -1,14 +1,14 @@
 import React from 'react';
-import Hack1 from '../assets/hack1.jpg'; // Import images
+import Hack1 from '../assets/hack1.jpg'; 
 import Hack2 from '../assets/hack2.jpg';
 
 const Hackathon = () => {
   // Define hackathon details
   const hackathons = [
     {
-      title: 'OneAPI LLM Challenge',
+      title: 'OneAPI LLM Challenge-2023',
       sponsor: 'Intel',
-      problemStatement: 'Develop an innovative solution to streamline remote team collaboration and improve productivity.',
+      problemStatement: 'Empower legal professionals with cutting-edge Generative AI technology. Participants are tasked with fine tuning an innovative Legal Practice Platform powered by Large Language Models (LLM) tailored to meet the specific needs and challenges faced by legal professionals.',
       leftImage: Hack1, 
       rightImage:Hack2,
     },

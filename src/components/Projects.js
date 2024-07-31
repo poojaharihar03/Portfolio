@@ -1,80 +1,85 @@
-import React from 'react';
-// Import tech stack icons
-import { ReactComponent as ReactIcon } from '../assets/icons/react.svg';
-import { ReactComponent as JavaIcon } from '../assets/icons/java.svg';
-import { ReactComponent as JSIcon } from '../assets/icons/js.svg';
-import { ReactComponent as PythonIcon } from '../assets/icons/python.svg';
-import { ReactComponent as FlaskIcon } from '../assets/icons/flask.svg';
+import React, { useEffect, useState } from 'react';
+import './Projects.css'; // Import the CSS file for custom animations
 
-const Projects = () => {
-  // Define projects with details
+const Projects = ({ isDarkMode }) => {
+  const [inView, setInView] = useState([]);
+
   const projects = [
     {
       title: 'Senor Legal Advisor',
       link: 'https://senor-fcoi.vercel.app/#',
-      description: 'An innovative chat application designed to centralize Indian legal resources. Seamlessly access comprehensive information on Indian laws and court cases—all in one place. Simplify your legal inquiries and stay informed with ease.',
-      techStack: [
-        { name: 'React', icon: <ReactIcon key="react" className="w-6 h-6 inline-block mx-1" title="React" /> },
-        { name: 'JavaScript', icon: <JSIcon key="js" className="w-6 h-6 inline-block mx-1" title="JavaScript" /> },
-        { name: 'LLM', icon: null },  // No icon for LLM
-      ],
+      description: 'An innovative chat application designed to centralize Indian legal resources. Seamlessly access comprehensive information on Indian laws and court cases—all in one place. Simplify your legal inquiries and stay informed with ease',
+      techStack: ['Python', 'LangChain', 'Llama3', 'Streamlit', 'React'],
     },
     {
       title: 'Emo-Music',
       link: 'https://emo-music.streamlit.app/',
-      description: 'This app helps analyze your mood and recommend songs based on how you are feeling, making it easier to find the perfect music for any emotion.',
-      techStack: [
-        { name: 'Python', icon: <PythonIcon key="python" className="w-6 h-6 inline-block mx-1" title="Python" /> },
-        { name: 'LLM', icon: null },  // No icon for LLM
-      ],
+      description: 'App helps analyze your mood and recommend songs based on how you are feeling, making it easier to find the perfect music for any emotion. Utilizes the YouTube Data API to fetch and display relevant music videos. Users can select their preferred language for recommendations and sort the suggested songs based on criteria like relevance, view count, rating, or date.',
+      techStack: ['Streamlit', 'PyPDF2', 'Bert'],
     },
     {
       title: 'Basket Prediction',
       link: 'https://github.com/poojaharihar03/BigBasket_Cart_Prediction',
-      description: 'A tool for visualizing and analyzing large datasets to gain insights into basketball performance and trends.',
-      techStack: [
-        { name: 'Python', icon: <PythonIcon key="python" className="w-6 h-6 inline-block mx-1" title="Python" /> },
-      ],
+      description: 'This project delves into applying the Apriori algorithm and sequential pattern mining to extract valuable insights from transactional data. By identifying frequent itemsets and sequential patterns, we aim to uncover hidden associations and trends that can inform business strategies and decision-making processes',
+      techStack: ['Python', 'Data Mining', 'Apriori Algorithm'],
     },
     {
       title: 'Weather App',
       link: 'https://github.com/poojaharihar03/WeatherApp',
       description: 'An application that provides real-time weather updates and forecasts to keep you informed about weather conditions anywhere.',
-      techStack: [
-        { name: 'React', icon: <ReactIcon key="react" className="w-6 h-6 inline-block mx-1" title="React" /> },
-      ],
+      techStack: ['Java', 'Android'],
     },
     {
       title: 'Talent Boost - HR Application',
-      link: 'https://github.com/poojaharihar03/TalentBoost',
-      description: 'An HR application designed to streamline employee management, performance tracking, and recruitment processes efficiently.',
-      techStack: [
-        { name: 'flask', icon: <ReactIcon key="react" className="w-6 h-6 inline-block mx-1" title="flask" /> },
-        { name: 'python', icon: <JavaIcon key="java" className="w-6 h-6 inline-block mx-1" title="Python" /> },
-      ],
+      link: 'https://github.com/poojaharihar03/WeatherApp',
+      description: 'A web app for efficient candidate evaluation. Candidates submit resumes for instant assessment based on predefined criteria. Recruiters receive immediate feedback on qualifications and skills. Automating assessments and communication.',
+      techStack: ['OpenAPI', 'Python', 'Flask', 'Langchain', 'Yagmail'],
     },
   ];
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const elements = document.querySelectorAll('.project-item');
+      elements.forEach((element, index) => {
+        const rect = element.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+          setInView(prev => [...prev, index]);
+        }
+      });
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Initial check
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <section id="projects" className="bg-gray-100 py-12">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-8">Projects Showcase</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <section id="projects" className={`py-40 ${isDarkMode ? 'bg-gray-900' : 'bg-gray-100'}`}>
+      <div className="container mx-auto px-6">
+        <h2 className={`text-3xl font-bold text-center mb-16 ${isDarkMode ? 'text-white' : 'text-black'}`}>My Projects</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
           {projects.map((project, index) => (
-            <div key={index} className="bg-white rounded-lg shadow-lg p-6">
-              <h3 className="text-xl font-bold mb-4">
-                <a href={project.link} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">
+            <div 
+              key={index} 
+              className={`relative rounded-lg shadow-xl p-8 transition-transform duration-500 transform ${inView.includes(index) ? 'translate-y-0 opacity-100' : 'translate-y-16 opacity-50'} project-item ${isDarkMode ? 'bg-gray-800 text-white hover:bg-pink-500' : 'bg-white text-black hover:bg-pink-00'}`}
+              style={{
+                width: '430px', // Fixed width
+                height: '430px', // Fixed height to make it square
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between',
+              }}
+            >
+              <h3 className="text-2xl text-center font-bold mb-6">
+                <a href={project.link} target="_blank" rel="noopener noreferrer" className={`hover:underline ${isDarkMode ? 'text-blue-400' : 'text-blue-600'}`}>
                   {project.title}
                 </a>
               </h3>
-              <p className="text-gray-700 mb-4">{project.description}</p>
-              <div className="flex items-center mb-4 space-x-2">
-                <span className="text-gray-700 font-semibold">Tech Stacks -</span>
+              <p className={`mb-6 ${isDarkMode ? 'text-gray-300' : 'text-gray-700'} text-justify text-base`}>{project.description}</p>
+              <div className="flex flex-wrap">
                 {project.techStack.map((tech, i) => (
-                  <div key={i} className="flex items-center space-x-1">
-                    {tech.icon}
-                    <span className="text-gray-700">{tech.name}</span>
-                  </div>
+                  <span key={i} className="mr-4 mb-2 text-xs">{tech}</span>
                 ))}
               </div>
             </div>
