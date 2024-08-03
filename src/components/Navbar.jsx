@@ -73,7 +73,7 @@ const Navbar = ({ isDarkMode, toggleDarkMode }) => {
             Projects
           </Link>
           <a
-            href="https://drive.google.com/file/d/1CzMdtfwqJ9tr2UbJbnl6dhm-s3MfCBii/view?usp=drive_link"
+            href="https://drive.google.com/file/d/1_FV6weLST95UG4rNuHi9ouUl-hn1H5PK/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             className={`navbar-button ${isDarkMode ? 'navbar-button-dark' : 'navbar-button-light'}`}
